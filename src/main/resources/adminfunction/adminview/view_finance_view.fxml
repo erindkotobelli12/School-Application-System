@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="adminfunc.adminview.View_Finance_Controller"
+            prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- Top: Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              style="-fx-background-color: #002b5c; -fx-padding: 15 20;">
+            <Label text="SCHOOL APP - ADMIN PANEL"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#handleBack"
+                    style="-fx-background-color: #5a5a5a; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20; -fx-background-radius: 3;"/>
+            <Label text="Admin"
+                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Center: Financial Dashboard -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 20;">
+
+                <!-- Title -->
+                <Label text="Financial Overview" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+                <!-- Key Metrics Cards -->
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                    </columnConstraints>
+
+                    <!-- Total Income Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Total Income Received" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="lblTotalIncome" text="€0.00" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #5cb85c;"/>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Students:" style="-fx-font-size: 11px; -fx-text-fill: #999;"/>
+                            <Label fx:id="lblStudentCount" text="0" style="-fx-font-size: 11px; -fx-font-weight: bold;"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Total Expenses Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Total Expenses" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="lblTotalExpenses" text="€0.00" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #d9534f;"/>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Professors:" style="-fx-font-size: 11px; -fx-text-fill: #999;"/>
+                            <Label fx:id="lblProfessorCount" text="0" style="-fx-font-size: 11px; -fx-font-weight: bold;"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Net Profit Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Label text="Net Profit/Loss" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="lblNetProfit" text="€0.00" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                        <Label text="Income - Expenses" style="-fx-font-size: 11px; -fx-text-fill: #999;"/>
+                    </VBox>
+
+                    <!-- Expected Income Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="3" GridPane.rowIndex="0">
+                        <Label text="Expected Total Income" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                        <Label fx:id="lblExpectedIncome" text="€0.00" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f0ad4e;"/>
+                        <Label text="Full tuition fees" style="-fx-font-size: 11px; -fx-text-fill: #999;"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Additional Metrics -->
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Average Payment Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Average Payment per Student" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblAveragePayment" text="€0.00" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c5aa0;"/>
+                    </VBox>
+
+                    <!-- Average Salary Card -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Average Salary per Professor" style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblAverageSalary" text="€0.00" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c5aa0;"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Charts Section -->
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Pie Chart -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Income vs Expenses Distribution" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Separator/>
+                        <PieChart fx:id="financePieChart" prefHeight="300" legendVisible="true"/>
+                    </VBox>
+
+                    <!-- Bar Chart -->
+                    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Actual vs Expected Comparison" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Separator/>
+                        <BarChart fx:id="incomeExpenseChart" prefHeight="300" legendVisible="true">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" label="Amount (€)"/>
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+                </GridPane>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

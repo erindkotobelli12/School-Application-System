@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e3efff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.admindelete.Admin_Student_Delete">
+    <children>
+        <HBox alignment="CENTER_LEFT" minHeight="60.0" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-background-radius: 5; -fx-cursor: hand;" text="← Back" textFill="WHITE" />
+                <Label text="Admin: Erind Kotobelli" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <VBox alignment="TOP_CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="80.0" />
+            </padding>
+            <children>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label text="Delete Student" textFill="#003366">
+                            <font>
+                                <Font name="System Bold" size="32.0" />
+                            </font>
+                        </Label>
+                        <Label text="Enter the Student ID to permanently remove their academic profile." textFill="#566573">
+                            <font>
+                                <Font name="System Italic" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <VBox alignment="CENTER" maxWidth="500.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);">
+                    <padding>
+                        <Insets bottom="50.0" left="40.0" right="40.0" top="50.0" />
+                    </padding>
+                    <children>
+                        <GridPane hgap="15.0" vgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="40.0" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Student ID:" textFill="#003366">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtStudentId" prefHeight="35.0" promptText="e.g. 2024001" style="-fx-border-color: #003366; -fx-border-radius: 5; -fx-background-color: white;" GridPane.columnIndex="1" />
+                            </children>
+                        </GridPane>
+
+                        <Button fx:id="btnDelete" onAction="#handleDeleteStudent" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #c0392b; -fx-background-radius: 5;" text="DELETE STUDENT" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

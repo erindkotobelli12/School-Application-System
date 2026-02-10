@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="800.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminedit.Admin_Department_Edit">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: #003366;" spacing="20.0">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand" text="← Back" textFill="WHITE" />
+                <Label fx:id="adminNameLabel" text="Admin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <VBox alignment="TOP_CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="40.0" bottom="20.0" left="50.0" right="50.0" />
+            </padding>
+            <children>
+                <Label text="Edit Existing Department">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <GridPane hgap="15.0" vgap="15.0" maxWidth="400.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Enter Dept ID to Edit:" />
+                        <TextField fx:id="txtId" GridPane.columnIndex="1" promptText="Type ID to search..." />
+
+                        <Label text="Department Name:" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Department Code:" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtCode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Location:" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtLocation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </children>
+                </GridPane>
+
+                <Button fx:id="btnUpdate" onAction="#handleUpdateDepartment" prefWidth="150.0" style="-fx-background-color: #003366;" text="Update Department" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</VBox>

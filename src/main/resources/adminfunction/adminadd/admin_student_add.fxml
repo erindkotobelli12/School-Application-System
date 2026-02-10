@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="750.0" prefWidth="900.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminadd.Admin_Student_Add">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand;" text="← Back" textFill="WHITE" />
+                <Label text="Admin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="20.0">
+                    <padding>
+                        <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+                    </padding>
+                    <children>
+                        <Label text="Register New Student">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+
+                        <GridPane hgap="20.0" maxWidth="700.0" vgap="12.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="First Name:" />
+                                <TextField fx:id="txtFirstName" GridPane.columnIndex="1" />
+
+                                <Label text="Last Name:" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtLastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Birth Date:" GridPane.rowIndex="2" />
+                                <DatePicker fx:id="dpBirthDate" prefWidth="200.0" promptText="MM/DD/YYYY" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Gender:" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="comboGender" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <Label text="Age (Int):" GridPane.rowIndex="4" />
+                                <TextField fx:id="txtAge" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <Label text="Email:" GridPane.rowIndex="5" />
+                                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                <Label text="Phone:" GridPane.rowIndex="6" />
+                                <TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                                <Label text="Department:" GridPane.columnIndex="2" />
+                                <ComboBox fx:id="comboDept" prefWidth="200.0" GridPane.columnIndex="3" />
+
+                                <Label text="Degree:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="comboDegree" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                                <Label text="Enrollment Year:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                <TextField fx:id="txtEnrollYear" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                                <Label text="Status:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="comboStatus" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                                <Label text="Account Password:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                <PasswordField fx:id="txtPassword" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                                <Label text="Is Active:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                <CheckBox fx:id="checkIsActive" selected="true" text="Active Student" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+
+                                <Label text="Home Address:" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                <TextField fx:id="txtAddress" promptText="Street, City, Zip" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                            </children>
+                        </GridPane>
+
+                        <Button fx:id="btnSave" onAction="#handleSaveStudent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #003366; -fx-cursor: hand;" text="Save Student" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

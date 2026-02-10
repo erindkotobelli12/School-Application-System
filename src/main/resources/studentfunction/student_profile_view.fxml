@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentfunc.Student_Profile_Controller">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold;-fx-font-size: 18px;" text="SCHOOL APP">
+
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBackButton" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5; -fx-font-weight: bold;" text="← Back" />
+                <Label fx:id="Fullname" style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="" />
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox prefWidth="230.0" spacing="10.0" style="-fx-background-color: #f4f4f4; -fx-padding: 25 10 10 10; -fx-border-color: #dddddd; -fx-border-width: 0 1 0 0;">
+            <children>
+                <Button fx:id="btnIdent" maxWidth="Infinity" onAction="#showIdentification" prefHeight="50.0" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-cursor: hand; -fx-alignment: CENTER_LEFT; -fx-font-size: 16px; -fx-padding: 0 0 0 15;" text="👤 Identification" />
+                <Button fx:id="btnAddress" maxWidth="Infinity" onAction="#showAddress" prefHeight="50.0" style="-fx-background-color: transparent; -fx-text-fill: #555555; -fx-cursor: hand; -fx-alignment: CENTER_LEFT; -fx-font-size: 16px; -fx-padding: 0 0 0 15;" text="📍 Address" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white; -fx-background: white;">
+            <content>
+                <VBox spacing="30.0" style="-fx-padding: 45; -fx-background-color: white;">
+                    <children>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label fx:id="Fullname1" style="-fx-font-weight: bold;" text="">
+                                    <font>
+                                        <Font size="32.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="email" style="-fx-text-fill: #0099cc; -fx-font-size: 18px;" text="" />
+                            </children>
+                        </VBox>
+
+                        <StackPane fx:id="contentArea" alignment="TOP_LEFT">
+                            <children>
+                                <VBox fx:id="identificationTableContainer" style="-fx-border-color: #0099cc; -fx-border-width: 1;">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" style="-fx-background-color: #0099cc; -fx-padding: 0 20 0 20;">
+                                            <children>
+                                                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" text="👤 Person Details" />
+                                            </children>
+                                        </HBox>
+                                        <VBox spacing="15.0" style="-fx-padding: 30; -fx-background-color: white;">
+                                            <children>
+                                                <Label style="-fx-font-size: 22px; -fx-text-fill: #444444; -fx-font-weight: bold;" text="Personal Information" />
+                                                <GridPane hgap="30.0" vgap="15.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="RIGHT" minWidth="150.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="300.0" />
+                                                    </columnConstraints>
+                                                    <children>
+                                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 17px;" text="Name" />
+                                                        <Label fx:id="labelName" style="-fx-text-fill: #0099cc; -fx-font-size: 19px; -fx-font-weight: bold;" text="" GridPane.columnIndex="1" />
+
+                                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 17px;" text="Surname" GridPane.rowIndex="1" />
+                                                        <Label fx:id="labelSurname" style="-fx-text-fill: #0099cc; -fx-font-size: 19px; -fx-font-weight: bold;" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 17px;" text="Epoka ID No." GridPane.rowIndex="2" />
+                                                        <Label fx:id="labelId" style="-fx-text-fill: #0099cc; -fx-font-size: 19px; -fx-font-weight: bold;" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 17px;" text="Birthday" GridPane.rowIndex="3" />
+                                                        <Label fx:id="labelBirthday" style="-fx-text-fill: #0099cc; -fx-font-size: 19px; -fx-font-weight: bold;" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

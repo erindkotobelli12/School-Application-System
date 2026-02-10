@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentfunc.Student_Finance_Controller">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" minHeight="70.0" spacing="20.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 22px;" text="SCHOOL APP" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 8 20; -fx-background-radius: 5;" text="← Back" />
+                <Label fx:id="userNameLabel" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="User Name" />
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <content>
+                <VBox spacing="30.0" style="-fx-padding: 40;">
+                    <children>
+                        <Label style="-fx-font-size: 28px; -fx-text-fill: #333;" text="Finance Details" />
+
+                        <VBox prefWidth="450.0" maxWidth="450.0" style="-fx-background-color: white; -fx-border-color: #0099cc; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <Label maxWidth="Infinity" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Outstanding Tuition Fees" />
+                            <GridPane hgap="10" vgap="15" style="-fx-padding: 20;">
+                                <Label style="-fx-font-size: 14px;" text="Total Tuition Fee" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <Label fx:id="totalTuitionLabel" style="-fx-font-weight: bold;" text="€0.00" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label style="-fx-font-size: 14px;" text="Paid Amount" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <Label fx:id="paidAmountLabel" style="-fx-font-weight: bold;" text="€0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Separator GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+                                <Label style="-fx-font-size: 14px; -fx-text-fill: #d9534f; -fx-font-weight: bold;" text="Remaining Amount" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <Label fx:id="remainingAmountLabel" style="-fx-font-weight: bold; -fx-text-fill: #d9534f; -fx-font-size: 16px;" text="€0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </GridPane>
+                        </VBox>
+
+                        <VBox style="-fx-background-color: white; -fx-border-color: #0099cc; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <Label maxWidth="Infinity" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="€ Bank Accounts Info" />
+
+                            <TableView fx:id="bankTable" prefHeight="180.0" style="-fx-selection-bar: #e9ecef; -fx-background-color: white;">
+                                <columns>
+                                    <TableColumn fx:id="bankNameCol" prefWidth="180.0" text="Bank" />
+                                    <TableColumn fx:id="accountNumCol" prefWidth="120.0" text="Account Number" />
+                                    <TableColumn fx:id="currencyCol" prefWidth="80.0" text="Currency" />
+                                    <TableColumn fx:id="ibanCol" prefWidth="200.0" text="EURO IBAN" />
+                                    <TableColumn fx:id="swiftCol" prefWidth="120.0" text="Swift Code" />
+                                    <TableColumn fx:id="descCol" prefWidth="300.0" text="Description" />
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                </columnResizePolicy>
+                            </TableView>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="professorfunc.Professor_Transportation_Controller"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="20.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 22px;" text="EPOKA INTERACTIVE SYSTEM" />
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button onAction="#handleBackButton" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold; -fx-background-radius: 5;" text="← Back" />
+
+                <Label fx:id="userNameLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold;"
+                       text="Erind Kotobelli" />
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox prefWidth="240.0" spacing="12.0" style="-fx-background-color: white; -fx-padding: 30 15 15 15; -fx-border-color: #dee2e6; -fx-border-width: 0 1 0 0;">
+            <children>
+                <Button fx:id="btnToCampus" maxWidth="Infinity" onAction="#showToCampus" prefHeight="55.0" text="🚌 City - Campus" />
+                <Button fx:id="btnToCity" maxWidth="Infinity" onAction="#showToCity" prefHeight="55.0" text="🚌 Campus - City" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #f8f9fa;">
+            <content>
+                <VBox spacing="40.0" style="-fx-padding: 50; -fx-background-color: #f8f9fa;">
+                    <children>
+                        <Label fx:id="titleLabel" style="-fx-font-weight: bold; -fx-font-size: 34px; -fx-text-fill: #2c3e50;" text="Weekly Transport Timetable" />
+
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnMon" onAction="#handleDayClick" prefHeight="45.0" prefWidth="120.0" text="Monday" />
+                                <Button fx:id="btnTue" onAction="#handleDayClick" prefHeight="45.0" prefWidth="120.0" text="Tuesday" />
+                                <Button fx:id="btnWed" onAction="#handleDayClick" prefHeight="45.0" prefWidth="120.0" text="Wednesday" />
+                                <Button fx:id="btnThu" onAction="#handleDayClick" prefHeight="45.0" prefWidth="120.0" text="Thursday" />
+                                <Button fx:id="btnFri" onAction="#handleDayClick" prefHeight="45.0" prefWidth="120.0" text="Friday" />
+                            </children>
+                        </HBox>
+
+                        <StackPane fx:id="transportContentArea" alignment="TOP_LEFT" />
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

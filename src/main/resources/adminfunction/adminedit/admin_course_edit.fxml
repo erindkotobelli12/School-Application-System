@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="650.0" prefWidth="800.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminedit.Admin_Course_Edit">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand;" text="← Back" textFill="WHITE" />
+                <Label text="Admin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <VBox alignment="TOP_CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="20.0" left="50.0" right="50.0" top="40.0" />
+            </padding>
+            <children>
+                <Label text="Edit Existing Course">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <GridPane hgap="15.0" maxWidth="500.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Course ID (to search):" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtCourseId" promptText="Type ID to auto-fill..." GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Course Name:" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtCourseName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Degree ID (TypeCode):" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtTypeCode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Semester:" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtSemester" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label text="Credits:" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtCredit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label text="ECTS:" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtECTS" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <Label text="Course Type:" GridPane.rowIndex="6" />
+                        <ComboBox fx:id="comboStatus" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                        <Label text="Theo. Hours:" GridPane.rowIndex="7" />
+                        <TextField fx:id="txtTheoHours" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                        <Label text="Lab Req:" GridPane.rowIndex="8" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <children>
+                                <CheckBox fx:id="checkHasLab" text="Has Lab" />
+                                <TextField fx:id="txtLabHours" prefWidth="80.0" promptText="Hrs" />
+                            </children>
+                        </HBox>
+                    </children>
+                </GridPane>
+
+                <Button fx:id="btnUpdate" onAction="#handleUpdateCourse" prefWidth="180.0" style="-fx-background-color: #003366; -fx-cursor: hand;" text="Update Course" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</VBox>

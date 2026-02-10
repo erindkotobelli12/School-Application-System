@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.Admin_Edit_Add_Controller">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" minHeight="70.0" spacing="20.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 22px;" text="SCHOOL APP - ADMIN PANEL" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 8 20; -fx-background-radius: 5;" text="← Back" />
+                <Label fx:id="adminNameLabel" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Admin" />
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #f8f9fa;">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="40.0" style="-fx-padding: 50;">
+                    <children>
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: #343a40; -fx-font-weight: bold;" text="Entity Management - Edit" />
+
+                        <TilePane fx:id="tilePane" alignment="CENTER" hgap="30.0" prefColumns="3" vgap="30.0">
+                            <children>
+                                <Button fx:id="btnStudent" onAction="#adminStudentAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);" textAlignment="CENTER">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="👤" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Student" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnProfessor" onAction="#adminProfessorAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="👨‍🏫" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Professor" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnClassroom" onAction="#adminClassroomAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="🏫" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Classroom" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnCourse" onAction="#adminCourseAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="📚" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Course" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnDepartment" onAction="#adminDepartmentAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="🏢" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Department" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnDegree" onAction="#adminDegreeAdd" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="🎓" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Degree" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+
+                                <Button fx:id="btnConnect" onAction="#adminConnect" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                                    <graphic>
+                                        <VBox alignment="CENTER" spacing="10">
+                                            <Label style="-fx-font-size: 50px; -fx-text-fill: white;" text="➕" />
+                                            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Connect" />
+                                        </VBox>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </TilePane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

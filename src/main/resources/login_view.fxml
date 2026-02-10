@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="Login.LoginController"
+           style="-fx-background-color: #0B4A8B;">
+
+    <VBox spacing="15"
+          alignment="CENTER"
+          maxWidth="420"
+          style="-fx-background-color: white;
+                 -fx-background-radius: 10;
+                 -fx-padding: 30;">
+
+        <!-- Title / Logo -->
+        <Label text="School Management System"
+               style="-fx-font-size: 22px;
+                      -fx-font-weight: bold;" />
+
+        <Label text="Login to your account"
+               style="-fx-text-fill: #666666;" />
+
+        <!-- Username -->
+        <TextField fx:id="usernameField"
+                   promptText="Username"
+                   maxWidth="300"/>
+
+        <!-- Password -->
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       maxWidth="300"/>
+
+        <!-- Login Button -->
+        <Button text="Login"
+                onAction="#handleLogin"
+                maxWidth="300"
+                style="-fx-background-color: #4C8DFF;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;" />
+    </VBox>
+</StackPane>

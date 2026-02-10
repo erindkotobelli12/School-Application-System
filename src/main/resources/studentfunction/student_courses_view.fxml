@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox prefHeight="700.0" prefWidth="1000.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studentfunc.Student_Courses_Controller">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="65.0" spacing="15.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="SCHOOL APP" />
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button onAction="#handleBack" style="-fx-background-color: #707b7c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="← Back">
+                    <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                    </padding>
+                </Button>
+
+                <Label fx:id="studentNameLabel" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="student name" />
+            </children>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-background: #f4f4f4;">
+            <content>
+                <VBox spacing="20.0" style="-fx-padding: 20;">
+                    <children>
+                        <VBox spacing="0.0" style="-fx-border-color: #dcdcdc; -fx-border-width: 1; -fx-background-color: white;">
+                            <Label maxWidth="Infinity" style="-fx-background-color: #6a4a8a; -fx-text-fill: white; -fx-padding: 8 10; -fx-font-weight: bold;" text="#1 - Compulsory Courses" />
+                            <TableView fx:id="currentSemesterTable" prefHeight="220.0" editable="true">
+                                <columns>
+                                    <TableColumn fx:id="colCurrentSelect" prefWidth="55" text="Select" />
+                                    <TableColumn fx:id="colCurrentID" prefWidth="90" text="Code" />
+                                    <TableColumn fx:id="colCurrentName" prefWidth="300" text="Name" />
+                                    <TableColumn fx:id="colCurrentECTS" prefWidth="70" text="ECTS" />
+                                    <TableColumn fx:id="colCurrentCredits" prefWidth="70" text="Credits" />
+                                    <TableColumn fx:id="colCurrentType" prefWidth="110" text="Type" />
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <VBox spacing="0.0" style="-fx-border-color: #dcdcdc; -fx-border-width: 1; -fx-background-color: white;">
+                            <Label maxWidth="Infinity" style="-fx-background-color: #6a4a8a; -fx-text-fill: white; -fx-padding: 8 10; -fx-font-weight: bold;" text="#2 - Elective Courses" />
+                            <TableView fx:id="electiveTable" prefHeight="220.0" editable="true">
+                                <columns>
+                                    <TableColumn fx:id="colElectiveSelect" prefWidth="55" text="Select" />
+                                    <TableColumn fx:id="colElectiveID" prefWidth="90" text="Code" />
+                                    <TableColumn fx:id="colElectiveName" prefWidth="300" text="Name" />
+                                    <TableColumn fx:id="colElectiveECTS" prefWidth="70" text="ECTS" />
+                                    <TableColumn fx:id="colElectiveCredits" prefWidth="70" text="Credits" />
+                                    <TableColumn fx:id="colElectiveType" prefWidth="110" text="Type" />
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <VBox spacing="0.0" style="-fx-border-color: #dcdcdc; -fx-border-width: 1; -fx-background-color: white;">
+                            <Label maxWidth="Infinity" style="-fx-background-color: #6a4a8a; -fx-text-fill: white; -fx-padding: 8 10; -fx-font-weight: bold;" text="#3 - Past Courses (Retake Available)" />
+                            <TableView fx:id="pastCoursesTable" prefHeight="200.0" editable="true">
+                                <columns>
+                                    <TableColumn fx:id="colPastSelect" prefWidth="55" text="Select" />
+                                    <TableColumn fx:id="colPastID" prefWidth="90" text="Code" />
+                                    <TableColumn fx:id="colPastName" prefWidth="300" text="Name" />
+                                    <TableColumn fx:id="colPastGrade" prefWidth="100" text="Grade" />
+                                    <TableColumn fx:id="colPastCredits" prefWidth="70" text="Credits" />
+                                    <TableColumn fx:id="colPastSem" prefWidth="80" text="Sem" />
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="20.0" style="-fx-padding: 10 0 20 0;">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT">
+                                    <children>
+                                        <Label fx:id="creditCounterLabel" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Total Credits: 0" />
+                                        <Label fx:id="validationMessage" textFill="RED" />
+                                    </children>
+                                </VBox>
+                                <Button fx:id="confirmButton" onAction="#handleConfirm" style="-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25; -fx-cursor: hand;" text="Confirm Enrollment" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

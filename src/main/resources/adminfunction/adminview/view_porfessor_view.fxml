@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="adminfunc.adminview.View_Professor_Controller"
+            prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- Top: Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              style="-fx-background-color: #002b5c; -fx-padding: 15 20;">
+            <Label text="SCHOOL APP - ADMIN PANEL"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;">
+                <font>
+                    <Font name="System Bold" size="20.0"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#handleBack"
+                    style="-fx-background-color: #5a5a5a; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20; -fx-background-radius: 3;"/>
+            <Label text="Admin"
+                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Left: Search + Professor List -->
+    <left>
+        <VBox spacing="10" prefWidth="280" style="-fx-background-color: white; -fx-padding: 10;">
+            <Label text="View Professors" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <TextField fx:id="txtSearch" promptText="Search by name or ID..."
+                       style="-fx-font-size: 14px;"/>
+            <Separator/>
+            <Label text="Professors" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ListView fx:id="professorListView" VBox.vgrow="ALWAYS"
+                      style="-fx-font-size: 13px;"/>
+        </VBox>
+    </left>
+
+    <!-- Center: Professor Details -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox fx:id="professorDetailsPane" spacing="20" style="-fx-padding: 20;">
+
+                <!-- Basic Information Card -->
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                    <Label text="Basic Information" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Separator/>
+
+                    <GridPane hgap="15" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+
+                        <Label text="Professor ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblProfessorId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblProfessorName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblEmail" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblPhone" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                        <Label text="Department:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblDepartment" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- Professional Information Card -->
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                    <Label text="Professional Information" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Separator/>
+
+                    <GridPane hgap="15" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+
+                        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblType" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                        <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblTitle" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                        <Label text="Experience:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblExperience" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <Label text="Office:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblOffice" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                        <Label text="Specialization:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblSpecialization" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                        <Label text="Tenured:" GridPane.columnIndex="0" GridPane.rowIndex="5"
+                               style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblTenured" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- Salary Management Card -->
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                    <Label text="Salary Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Separator/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Current Salary:" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                        <Label fx:id="lblSalary" style="-fx-font-size: 16px; -fx-text-fill: #2c5aa0; -fx-font-weight: bold;"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="txtSalaryAmount" promptText="Enter new salary"
+                                   prefWidth="200" style="-fx-font-size: 14px;"/>
+                        <Button fx:id="btnUpdateSalary" text="Update Salary"
+                                onAction="#handleUpdateSalary"
+                                style="-fx-background-color: #2c5aa0; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8 20;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Classes Table -->
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                    <Label text="Teaching Schedule" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Separator/>
+
+                    <TableView fx:id="classesTable" prefHeight="200">
+                        <columns>
+                            <TableColumn fx:id="colClassroomId" text="Classroom ID" prefWidth="150"/>
+                            <TableColumn fx:id="colCourseName" text="Course Name" prefWidth="400"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

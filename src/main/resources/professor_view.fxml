@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainLayout" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="userTypes.ProfessorController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" minHeight="60.0" spacing="10.0" style="-fx-background-color: #003366; -fx-padding: 0 25 0 25;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px;" text="SCHOOL APP" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="Logged in:" />
+                <Label fx:id="userNameLabel" style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="" />
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sideBar" prefWidth="220.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #dee2e6; -fx-border-width: 0 1 0 0; -fx-padding: 10;">
+            <children>
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" style="-fx-background-color: transparent;" text="Home" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#Profile_button" style="-fx-background-color: transparent;" text="My Profile" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#Classes_button" style="-fx-background-color: transparent;" text="Classes" />
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#Transportation_button" style="-fx-background-color: transparent;" text="Transportation" />
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <Button alignment="BASELINE_LEFT" maxWidth="Infinity" onAction="#logout"
+                        style="-fx-background-color: #f8d7da; -fx-text-fill: #721c24; -fx-cursor: hand; -fx-font-weight: bold;"
+                        text="Logout" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #f8f9fa;">
+            <content>
+                <VBox spacing="25.0" style="-fx-padding: 30;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Button onAction="#toggleSidebar" style="-fx-font-size: 20px; -fx-background-color: #e9ecef; -fx-cursor: hand;" text="≡" />
+                                <Label style="-fx-font-size: 26px; -fx-text-fill: #343a40;" text="Welcome," />
+                                <Label fx:id="welcomeNameLabel" style="-fx-font-size: 26px; -fx-text-fill: #343a40; -fx-font-weight: bold;" text="" />
+                            </children>
+                        </HBox>
+
+                        <TilePane hgap="20.0" vgap="20.0">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: #0099cc; -fx-background-radius: 8;">
+                                    <Button onAction="#Profile_button" prefHeight="150.0" prefWidth="280.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                        <graphic>
+                                            <VBox alignment="CENTER" spacing="5">
+                                                <children>
+                                                    <Label style="-fx-font-size: 30px; -fx-text-fill: white; " text="👤" />
+                                                    <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="Profile" />
+                                                </children>
+                                            </VBox>
+                                        </graphic>
+                                    </Button>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: #669933; -fx-background-radius: 8;">
+                                    <Button onAction="#Classes_button" prefHeight="150.0" prefWidth="280.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                        <graphic>
+                                            <VBox alignment="CENTER" spacing="5">
+                                                <children>
+                                                    <Label style="-fx-font-size: 30px; -fx-text-fill: white;" text="📖" />
+                                                    <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" text="Classes" />
+                                                </children>
+                                            </VBox>
+                                        </graphic>
+                                    </Button>
+                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: #d9531e; -fx-background-radius: 8;">
+                                    <Button onAction="#Transportation_button" prefHeight="150.0" prefWidth="280.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                        <graphic>
+                                            <VBox alignment="CENTER" spacing="5">
+                                                <children>
+                                                    <Label style="-fx-font-size: 30px; -fx-text-fill: white;" text="🚌" />
+                                                    <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" text="Transport" />
+                                                </children>
+                                            </VBox>
+                                        </graphic>
+                                    </Button>
+                                </VBox>
+                            </children>
+                        </TilePane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

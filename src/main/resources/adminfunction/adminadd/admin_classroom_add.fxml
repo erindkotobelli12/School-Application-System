@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminadd.Admin_Classroom_Add">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding><Insets left="20.0" right="20.0" /></padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand;" text="← Back" textFill="WHITE" />
+            </children>
+        </HBox>
+        <VBox alignment="TOP_CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+            <padding><Insets top="40.0" /></padding>
+            <children>
+                <Label text="Add New Classroom" textFill="#003366"><font><Font name="System Bold" size="28.0" /></font></Label>
+                <GridPane hgap="15.0" maxWidth="400.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" prefWidth="250.0" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Classroom ID:" />
+                        <TextField fx:id="txtClassroomId" promptText="Numeric ID" GridPane.columnIndex="1" />
+                        <Label text="Classroom Name:" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtClassroomName" promptText="e.g. Lab A1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Course ID:" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtClassId" promptText="Course ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+                <Button onAction="#handleSaveClassroom" prefWidth="180.0" style="-fx-background-color: #003366;" text="Save Classroom" textFill="WHITE">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</VBox>

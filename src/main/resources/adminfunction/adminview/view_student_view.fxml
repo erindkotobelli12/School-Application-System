@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="1000.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminview.View_Student_Controller">
+    <children>
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand;" text="← Back" textFill="WHITE" />
+                <Label text="Admin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <!-- Main Content -->
+        <HBox VBox.vgrow="ALWAYS" style="-fx-background-color: #f4f4f4;">
+            <children>
+                <!-- Left Panel - Student List -->
+                <VBox prefWidth="300.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-width: 0 1 0 0;">
+                    <padding>
+                        <Insets top="20.0" left="15.0" right="15.0" bottom="20.0" />
+                    </padding>
+                    <children>
+                        <Label text="Search Students" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+                        <TextField fx:id="txtSearch" promptText="Search by name or ID..." style="-fx-background-radius: 5;">
+                            <padding>
+                                <Insets top="8.0" left="10.0" right="10.0" bottom="8.0" />
+                            </padding>
+                        </TextField>
+
+                        <Label text="Students" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 0 5 0;" />
+
+                        <ListView fx:id="studentListView" VBox.vgrow="ALWAYS" style="-fx-border-color: #ddd; -fx-border-radius: 5;" />
+                    </children>
+                </VBox>
+
+                <!-- Right Panel - Student Details -->
+                <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS" style="-fx-background-color: transparent;">
+                    <content>
+                        <VBox fx:id="studentDetailsPane" spacing="20.0" style="-fx-padding: 30;">
+                            <children>
+                                <Label text="Student Information" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #003366;" />
+
+                                <!-- Basic Info Card -->
+                                <VBox style="-fx-background-color: white; -fx-border-color: #0099cc; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                                    <Label maxWidth="Infinity" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Basic Information" />
+                                    <GridPane hgap="15" vgap="12" style="-fx-padding: 20;">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" />
+                                        </columnConstraints>
+
+                                        <Label text="Student ID:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblStudentId" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                                        <Label text="Full Name:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblStudentName" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                                        <Label text="Email:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblEmail" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                                        <Label text="Phone:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblPhone" text="-" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                                        <Label text="Department:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblDepartment" text="-" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+                                        <Label text="Degree:" style="-fx-font-weight: bold;" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblDegree" text="-" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+                                        <Label text="Enrollment Year:" style="-fx-font-weight: bold;" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblEnrollmentYear" text="-" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+                                        <Label text="Status:" style="-fx-font-weight: bold;" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+                                        <Label fx:id="lblStatus" text="-" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+                                    </GridPane>
+                                </VBox>
+
+                                <!-- Academic Performance -->
+                                <VBox style="-fx-background-color: white; -fx-border-color: #5cb85c; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                                    <Label maxWidth="Infinity" style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Academic Performance" />
+                                    <HBox alignment="CENTER" style="-fx-padding: 30;">
+                                        <VBox alignment="CENTER" spacing="5">
+                                            <Label text="Current GPA" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
+                                            <Label fx:id="lblGPA" text="0.00" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #5cb85c;" />
+                                            <Label text="out of 4.0" style="-fx-font-size: 12px; -fx-text-fill: #999;" />
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Financial Information -->
+                                <VBox style="-fx-background-color: white; -fx-border-color: #f0ad4e; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                                    <Label maxWidth="Infinity" style="-fx-background-color: #f0ad4e; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Financial Information" />
+                                    <VBox spacing="15" style="-fx-padding: 20;">
+                                        <GridPane hgap="15" vgap="12">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" halignment="RIGHT" />
+                                            </columnConstraints>
+
+                                            <Label text="Total Degree Cost:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                                            <Label fx:id="lblTotalCost" text="€0.00" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                                            <Label text="Amount Paid:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                                            <Label fx:id="lblPaidAmount" text="€0.00" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                                            <Separator GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+                                            <Label text="Remaining Balance:" style="-fx-font-weight: bold; -fx-font-size: 14px;" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                                            <Label fx:id="lblRemainingAmount" text="€0.00" style="-fx-font-size: 16px;" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                                        </GridPane>
+
+                                        <Separator />
+
+                                        <!-- Add Payment Section -->
+                                        <VBox spacing="10">
+                                            <Label text="Add Payment" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+                                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                                <TextField fx:id="txtPaymentAmount" promptText="Enter amount (€)" prefWidth="200" />
+                                                <Button fx:id="btnAddPayment" text="Add Payment" onAction="#handleAddPayment"
+                                                        style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 15;" />
+                                            </HBox>
+                                        </VBox>
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Current Courses -->
+                                <VBox style="-fx-background-color: white; -fx-border-color: #0099cc; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                                    <Label maxWidth="Infinity" style="-fx-background-color: #0099cc; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Current Courses" />
+                                    <TableView fx:id="currentCoursesTable" prefHeight="200">
+                                        <columns>
+                                            <TableColumn fx:id="colCourseID" text="Course ID" prefWidth="100" />
+                                            <TableColumn fx:id="colCourseName" text="Course Name" prefWidth="350" />
+                                            <TableColumn fx:id="colCredits" text="Credits" prefWidth="100" />
+                                        </columns>
+                                    </TableView>
+                                </VBox>
+
+                                <!-- Finished Courses -->
+                                <VBox style="-fx-background-color: white; -fx-border-color: #6a4a8a; -fx-border-width: 2 0 0 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                                    <Label maxWidth="Infinity" style="-fx-background-color: #6a4a8a; -fx-text-fill: white; -fx-padding: 10; -fx-font-weight: bold; -fx-font-size: 16px;" text="Completed Courses" />
+                                    <TableView fx:id="finishedCoursesTable" prefHeight="250">
+                                        <columns>
+                                            <TableColumn fx:id="colFinishedID" text="Course ID" prefWidth="100" />
+                                            <TableColumn fx:id="colFinishedName" text="Course Name" prefWidth="300" />
+                                            <TableColumn fx:id="colFinishedCredits" text="Credits" prefWidth="80" />
+                                            <TableColumn fx:id="colGrade" text="Grade" prefWidth="80" />
+                                        </columns>
+                                    </TableView>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="professorfunc.Professor_Classes_Controller">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" minHeight="70.0" spacing="20.0" style="-fx-background-color: #003366; -fx-padding: 0 30 0 30;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 22px;" text="SCHOOL APP" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBackButton" style="-fx-background-color: #5a6268; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 8 20; -fx-background-radius: 5;" text="← Back" />
+                <Label fx:id="professorNameLabel" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Professor Name" />
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="50.0" style="-fx-padding: 80 50 50 50;">
+            <children>
+                <Label style="-fx-font-size: 36px; -fx-text-fill: #343a40; -fx-font-weight: bold;" text="Class Management" />
+
+                <TilePane alignment="CENTER" hgap="50.0" vgap="30.0">
+                    <children>
+                        <Button fx:id="btnAttendance" onAction="#handleAttendance" prefHeight="250.0" prefWidth="350.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                            <graphic>
+                                <VBox alignment="CENTER" spacing="15">
+                                    <Label style="-fx-font-size: 60px; -fx-text-fill: white;" text="📋" />
+                                    <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" text="Attendance" />
+                                </VBox>
+                            </graphic>
+                        </Button>
+
+                        <Button fx:id="btnGrades" onAction="#handleGrades" prefHeight="250.0" prefWidth="350.0" style="-fx-background-color: #689f38; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+                            <graphic>
+                                <VBox alignment="CENTER" spacing="15">
+                                    <Label style="-fx-font-size: 60px; -fx-text-fill: white;" text="📝" />
+                                    <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" text="Grades" />
+                                </VBox>
+                            </graphic>
+                        </Button>
+                    </children>
+                </TilePane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="800.0" spacing="0.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminfunc.adminadd.Admin_Connect_Controller">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #003366;">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="SCHOOL APP - ADMIN PANEL" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleBack" style="-fx-background-color: #5a6268; -fx-cursor: hand" text="← Back" textFill="WHITE" />
+                <Label text="Admin" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <VBox alignment="TOP_CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="20.0" left="50.0" right="50.0" top="40.0" />
+            </padding>
+            <children>
+                <Label text="Assign Classroom to Professor">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <GridPane hgap="15.0" maxWidth="400.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="40.0" />
+                        <RowConstraints minHeight="10.0" prefHeight="40.0" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Classroom ID:" GridPane.rowIndex="0">
+                            <font><Font size="14.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtClassroomId" promptText="Enter Classroom ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Professor ID:" GridPane.rowIndex="1">
+                            <font><Font size="14.0" /></font>
+                        </Label>
+                        <TextField fx:id="txtProfessorId" promptText="Enter Professor ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+
+                <Button onAction="#handleConnect" prefWidth="180.0" style="-fx-background-color: #003366; -fx-cursor: hand" text="Save Connection" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</VBox>
